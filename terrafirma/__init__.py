@@ -1,8 +1,9 @@
 from . import achenbach, biran34
-import cv2 as __
+import cv2
 
 
-img = __.imread
+img = cv2.imread
+save = cv2.imwrite
 def show(title, img):
-    __.imshow(title, img)
-    __.waitKey(0)
+    cv2.imshow(title, img)
+    cv2.waitKey(0)
