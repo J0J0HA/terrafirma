@@ -20,7 +20,7 @@ def movement(image, circles1, circles2):
     for (a, b) in circles:
         x1, y1, r1 = a
         if b is None:
-            cv2.circle(img, (x1, y1), r1, (0, 255, 255), 8)
+            cv2.circle(img, (x1, y1), r1, (0, 255, 255), 4)
         else:
             x2, y2, r2 = b
             if x1 == x2 and y1 == y2:

@@ -14,4 +14,4 @@ c2 = s.update(i2)
 # tf.show("Output", tf.biran34.basic.mark(i2, c2))
 
 diff = tf.biran34.basic.differences(i2, c1, c2)
-tf.show("Output", diff)
+tf.show("Result", diff)
