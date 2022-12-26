@@ -19,7 +19,6 @@ class ImageSearcher:
             cv2.circle(mask, (x, y), self.rad, 255, -1)
             masked_image = cv2.bitwise_and(gray, gray, mask=mask)
             masked = cv2.merge([masked_image, masked_image, masked_image])
-            from .. import show
             cir = basic.find(masked)
             if cir is not None:
                 cirs.append(cir[0])
