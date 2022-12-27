@@ -6,6 +6,7 @@ def mark(image, circles):
     if circles is not None:
         for i in circles:
             if i is None:
+                print("Invalid Entry! No data given!")
                 continue
             else:
                 x, y, r = int(i[0]), int(i[1]), int(i[2])
@@ -19,7 +20,7 @@ def movement(image, circles1, circles2):
     circles = zip(circles1, circles2)
     for (a, b) in circles:
         if a is None and b is None:
-            print("Invalid Entry")
+            print("Invalid Entry! Circles did neither appear, disappear, change position or stay! (No data of either circle a or circle b)")
         elif a is None:
             x2, y2, r2 = b
             cv2.circle(img, (x2, y2), r2, (0, 0, 255), 4)
@@ -36,4 +37,3 @@ def movement(image, circles1, circles2):
                 cv2.circle(img, (x2, y2), r2, (255, 50, 50), 3)
                 cv2.arrowedLine(img, (x1, y1), (x2, y2), (0, 255, 255), 1)
     return img
-
