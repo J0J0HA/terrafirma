@@ -1,7 +1,7 @@
 from typing import *
-import cv2
-import numpy as np
-from . import basic
+import cv2 as __cv2
+import numpy as __np
+from . import basic as __basic
 
 
 class Search:
@@ -11,7 +11,7 @@ class Search:
 
     @staticmethod
     def from_image(image, radius):
-        circles = basic.find(image)
+        circles = __basic.find(image)
         return Search(circles, radius), circles
 
     def update(self, image):
@@ -22,13 +22,13 @@ class Search:
                 continue
             x = int(i[0])
             y = int(i[1])
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            mask = np.zeros(gray.shape, dtype=np.uint8)
+            gray = __cv2.cvtColor(image, __cv2.COLOR_BGR2GRAY)
+            mask = __np.zeros(gray.shape, dtype=__np.uint8)
             w, h = self.rad, self.rad
-            cv2.circle(mask, (x, y), self.rad, 255, -1)
-            masked_image = cv2.bitwise_and(gray, gray, mask=mask)
-            masked = cv2.merge([masked_image, masked_image, masked_image])
-            cir = basic.find(masked)
+            __cv2.circle(mask, (x, y), self.rad, 255, -1)
+            masked_image = __cv2.bitwise_and(gray, gray, mask=mask)
+            masked = __cv2.merge([masked_image, masked_image, masked_image])
+            cir = __basic.find(masked)
             if cir is not None:
                 cirs.append(cir[0])
             else:
