@@ -9,6 +9,6 @@ c2 = tf.achenbach.basic.find(i2)
 tf.show("Output", tf.biran34.basic.mark(i1, c1))
 tf.show("Output", tf.biran34.basic.mark(i2, c2))
 
-diff = tf.biran34.basic.movement(i2, c1, c2)
+diff = tf.biran34.basic.movement(i2.shape, c1, c2)
 tf.show("Output", diff)
 tf.save("result.png", diff)
